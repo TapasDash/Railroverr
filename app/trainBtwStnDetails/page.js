@@ -43,6 +43,7 @@ const TrainBetweenStationsDetails = () => {
   trainBetweenStationsData.map((trainData) => {
     console.log({ trainData });
     const {
+      _id,
       trainName,
       trainNo,
       sourceStationCode,
@@ -86,6 +87,7 @@ const TrainBetweenStationsDetails = () => {
   return cleanedUpTrainStationsData.map(
     ({ fromStation, toStation, trainName, trainNo }) => (
       <TrainInfoCard
+        key={_id}
         fromStation={fromStation}
         toStation={toStation}
         trainName={trainName}
