@@ -1,11 +1,10 @@
-"use client";
 import { useEffect, useState } from "react";
 import { getTrainBetweenStations } from "../features/trainBetweenStations/trainBetweenStationsSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/trainBetweenStations.scss";
-import { trainCodesData } from "@/utils/trainCodesData";
-import { useRouter } from "next/navigation";
+import { trainCodesData } from "./trainCodesData";
 
 const TrainBetweenStations = () => {
   const { data } = trainCodesData;
@@ -25,7 +24,7 @@ const TrainBetweenStations = () => {
     });
   };
   const dispatch = useDispatch();
-  const router = useRouter();
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -35,7 +34,7 @@ const TrainBetweenStations = () => {
     console.log({ fromStation, toStation });
     const trainObj = { fromStation, toStation };
     dispatch(getTrainBetweenStations(trainObj, toStation));
-    router.push("/trainBtwStnDetails");
+    navigate("/train-btw-stn-details");
   };
   // useEffect(() => {
   //   return () => {
