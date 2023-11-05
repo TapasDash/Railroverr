@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import TrainLoader from "@/utils/TrainLoader/TrainLoader";
 import TrainInfoCard from "@/components/TrainInfoCard";
 import { getTrainTimetableData } from "@/features/trainTimetable/trainTimetableSlice";
+import { Suspense } from "react";
 
 const TrainBetweenStationsDetails = () => {
   // const {
@@ -86,14 +87,16 @@ const TrainBetweenStationsDetails = () => {
 
   return cleanedUpTrainStationsData.map(
     ({ fromStation, toStation, trainName, trainNo, _id }) => (
-      <TrainInfoCard
-        key={_id}
-        fromStation={fromStation}
-        toStation={toStation}
-        trainName={trainName}
-        trainNo={trainNo}
-        onPress={() => onClickTrainInfoCard(trainNo)}
-      />
+      <Suspense fallback={<TrainLoader />}>
+        <TrainInfoCard
+          key={_id}
+          fromStation={fromStation}
+          toStation={toStation}
+          trainName={trainName}
+          trainNo={trainNo}
+          onPress={() => onClickTrainInfoCard(trainNo)}
+        />
+      </Suspense>
     )
   );
 };
