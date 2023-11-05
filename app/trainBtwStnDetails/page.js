@@ -46,18 +46,18 @@ const TrainBetweenStationsDetails = () => {
       _id,
       trainName,
       trainNo,
-      sourceStationCode,
-      sourceStationName,
+      fromStationCode,
+      fromStationName,
       fromTime,
       toTime,
-      destinationStationCode,
-      destinationStationName,
+      toStationCode,
+      toStationName,
     } = trainData || {};
 
     // const {
     //   stationName,
     //   stationCode,
-    //   destinationStationName,
+    //   toStationName,
     //   destinationStation,
     //   trainNo,
     //   trainName,
@@ -66,14 +66,14 @@ const TrainBetweenStationsDetails = () => {
     // } = trainData || {};
 
     const fromStation = {
-      code: sourceStationCode,
-      name: sourceStationName,
+      code: fromStationCode,
+      name: fromStationName,
       time: fromTime,
     };
 
     const toStation = {
-      code: destinationStationCode,
-      name: destinationStationName,
+      code: toStationCode,
+      name: toStationName,
       time: toTime,
     };
     cleanedUpTrainStationsData.push({
