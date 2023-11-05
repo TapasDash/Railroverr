@@ -1,3 +1,4 @@
+"use client";
 import "../../styles/header.scss";
 import { Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
