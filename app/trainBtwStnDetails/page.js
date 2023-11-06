@@ -87,7 +87,7 @@ const TrainBetweenStationsDetails = () => {
 
   return cleanedUpTrainStationsData.map(
     ({ fromStation, toStation, trainName, trainNo, _id }) => (
-      <Suspense fallback={<TrainLoader />}>
+      <Suspense fallback={<TrainLoader />} key={_id}>
         <TrainInfoCard
           key={_id}
           fromStation={fromStation}
