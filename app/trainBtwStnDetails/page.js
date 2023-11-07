@@ -41,50 +41,51 @@ const TrainBetweenStationsDetails = () => {
   };
 
   let cleanedUpTrainStationsData = [];
-  trainBetweenStationsData.map((trainData) => {
-    console.log({ trainData });
-    const {
-      _id,
-      trainName,
-      trainNo,
-      fromStationCode,
-      fromStationName,
-      fromTime,
-      toTime,
-      toStationCode,
-      toStationName,
-    } = trainData || {};
+  trainBetweenStationsData.length &&
+    trainBetweenStationsData.map((trainData) => {
+      console.log({ trainData });
+      const {
+        _id,
+        trainName,
+        trainNo,
+        fromStationCode,
+        fromStationName,
+        fromTime,
+        toTime,
+        toStationCode,
+        toStationName,
+      } = trainData || {};
 
-    // const {
-    //   stationName,
-    //   stationCode,
-    //   toStationName,
-    //   destinationStation,
-    //   trainNo,
-    //   trainName,
-    //   arrivalTime,
-    //   departureTime,
-    // } = trainData || {};
+      // const {
+      //   stationName,
+      //   stationCode,
+      //   toStationName,
+      //   destinationStation,
+      //   trainNo,
+      //   trainName,
+      //   arrivalTime,
+      //   departureTime,
+      // } = trainData || {};
 
-    const fromStation = {
-      code: fromStationCode,
-      name: fromStationName,
-      time: fromTime,
-    };
+      const fromStation = {
+        code: fromStationCode,
+        name: fromStationName,
+        time: fromTime,
+      };
 
-    const toStation = {
-      code: toStationCode,
-      name: toStationName,
-      time: toTime,
-    };
-    cleanedUpTrainStationsData.push({
-      _id,
-      fromStation,
-      toStation,
-      trainName,
-      trainNo,
+      const toStation = {
+        code: toStationCode,
+        name: toStationName,
+        time: toTime,
+      };
+      cleanedUpTrainStationsData.push({
+        _id,
+        fromStation,
+        toStation,
+        trainName,
+        trainNo,
+      });
     });
-  });
 
   return cleanedUpTrainStationsData.map(
     ({ fromStation, toStation, trainName, trainNo, _id }) => (
