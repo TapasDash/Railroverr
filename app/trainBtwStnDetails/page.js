@@ -78,6 +78,7 @@ const TrainBetweenStationsDetails = () => {
       time: toTime,
     };
     cleanedUpTrainStationsData.push({
+      _id,
       fromStation,
       toStation,
       trainName,

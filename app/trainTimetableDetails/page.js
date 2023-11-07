@@ -9,7 +9,7 @@ const TrainTimetableDetails = () => {
     useSelector((state) => state.trainTimetable);
   console.log("--->", trainTimetableData.schedules);
   console.log({ trainTimetableData });
-  if (isLoading) return <TrainLoader />;
+  // if (isLoading) return <TrainLoader />;
   return (
     <Suspense fallback={<TrainLoader />}>
       <section className="trainTimetableDetails">
