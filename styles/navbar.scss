@@ -64,6 +64,7 @@ a:hover {
       left: 0;
       top: 5.2rem;
       padding: 0.8rem;  
+      padding-bottom: 1.5rem;
       opacity: 0.8;
       transition: all 0.5s ease-out;
       width: 100%;
@@ -72,13 +73,19 @@ a:hover {
       a {
         color: $primary;
         text-align: center;
-        padding: 2rem;
         width: 100%;
         transition: all 0.5s ease;
+        font-weight: 5em;
+        font-size: 1em;
 
         &:hover {
           color: whitesmoke;
         }
+      }
+
+      // this is for spacing between links
+      li {
+        padding-top: 1rem;
       }
     }
 
@@ -91,6 +98,7 @@ a:hover {
         background: $grad;
       }
       margin: 1rem;
+      margin-bottom: 1rem;
       outline: none;
       border: none;
       border-radius: 3px;
