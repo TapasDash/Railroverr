@@ -36,7 +36,7 @@ const Navbar = () => {
             <Link href="/trainTimeTable">Train Timetable</Link>
           </li>
           <li>
-            <Link href="/pnr">PNR</Link>
+            <Link href="/pnr">PNR Status</Link>
           </li>
         </ul>
         <a className="mobileMenuIcons" onClick={() => setIsMobile(!isMobile)}>
