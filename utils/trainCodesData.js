@@ -14109,7 +14109,7 @@ export const trainCodesData = {
       code: "PASA",
     },
     {
-      name: "Paralakhemundi",
+      name: "PARALAKHEMUNDI",
       code: "PLH",
     },
     {
