@@ -6,7 +6,7 @@ const getTrainBetweenStations = async (fromStation, toStation) => {
   console.log("getTrainBetweenStations", { fromStation, toStation });
   console.log(process.env);
   const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_TRAIN_TIMETABLE_URL}/${fromStation}/${toStation}`
+    `${process.env.NEXT_PUBLIC_TRAIN_TIMETABLE_URL}/from/${fromStation}/to/${toStation}`
   ); // { stationCode: fromStation, destinationStation: toStation }
   console.log({ response });
   console.log("---->", response?.data?.trains);
