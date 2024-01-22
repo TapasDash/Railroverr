@@ -6,8 +6,9 @@ import { saveTrainData, saveTrainInfo } from "@/utils/saveTrain";
 import { NextResponse } from "next/server";
 
 export async function GET(request, { params }) {
-  const { trainNo } = params;
   await connectDB();
+  const { trainNo } = params;
+
   try {
     let response;
     const userAgent = new UserAgent();

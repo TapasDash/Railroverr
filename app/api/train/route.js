@@ -38,12 +38,12 @@ export async function GET(request) {
   }
 }
 
-export async function DELETE() {
-  const id = request.nextUrl.searchParams.get("id"); //eqv to req.query.id
-  await connectDB();
-  await Topic.findByIdAndDelete(id);
-  return NextResponse.json({
-    success: true,
-    message: "Topic has been deleted successfully",
-  });
-}
+// export async function DELETE() {
+//   const id = request.nextUrl.searchParams.get("id"); //eqv to req.query.id
+//   await connectDB();
+//   await Topic.findByIdAndDelete(id);
+//   return NextResponse.json({
+//     success: true,
+//     message: "Topic has been deleted successfully",
+//   });
+// }
