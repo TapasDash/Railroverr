@@ -47,6 +47,7 @@ export const trainInfoSchema = new Schema(
   { timestamps: true }
 );
 
-const TrainInfo = mongoose.model("trainInfo", trainInfoSchema);
+const TrainInfo =
+  mongoose.models.trainInfo || mongoose.model("trainInfo", trainInfoSchema);
 
 export default TrainInfo;

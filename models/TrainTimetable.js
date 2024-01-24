@@ -26,6 +26,8 @@ export const trainTimetableSchema = new Schema(
   { timestamps: true }
 );
 
-const TrainTimetable = mongoose.model("timetable", trainTimetableSchema);
+const TrainTimetable =
+  mongoose.models.timetable ||
+  mongoose.model("timetable", trainTimetableSchema);
 
 export default TrainTimetable;

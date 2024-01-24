@@ -13,6 +13,8 @@ const trainSearchSchema = new Schema(
   { timestamps: true }
 );
 
-const TrainSearch = mongoose.model("trainSearch", trainSearchSchema);
+const TrainSearch =
+  mongoose.models.trainSearch ||
+  mongoose.model("trainSearch", trainSearchSchema);
 
 export default TrainSearch;
