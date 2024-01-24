@@ -14,7 +14,6 @@ export async function GET(request) {
     .project({
       trainName: { $arrayElemAt: ["$trainName", 0] },
     });
-  console.log("is");
   return NextResponse.json({
     success: true,
     data: trainData,
