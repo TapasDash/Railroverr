@@ -9,6 +9,17 @@ const nextConfig = {
     methods: ["GET", "POST", "PUT", "DELETE"],
     headers: ["Content-Type", "Authorization"],
   },
+  experimental: {
+    esmExternals: "loose", // <-- add this
+    serverComponentsExternalPackages: ["mongoose"], // <-- and this
+  },
+  // and the following to enable top-level await support for Webpack
+  webpack: (config) => {
+    config.experiments = {
+      topLevelAwait: true,
+    };
+    return config;
+  },
 
   // async rewrites() {
   //   return [
