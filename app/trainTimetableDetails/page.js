@@ -3,15 +3,16 @@ import { useSelector } from "react-redux";
 import "@/styles/trainTimetableDetails.scss";
 import TrainLoader from "@/utils/TrainLoader/TrainLoader";
 import { Suspense } from "react";
+import Loading from "../loading";
 
 const TrainTimetableDetails = () => {
   const { trainTimetableData, isLoading, isError, message, isSuccess } =
     useSelector((state) => state.trainTimetable);
   console.log("--->", trainTimetableData.schedules);
   console.log({ trainTimetableData });
-  // if (isLoading) return <TrainLoader />;
+  if (isLoading) return <TrainLoader />;
   return (
-    <Suspense fallback={<TrainLoader />}>
+    <Suspense fallback={<Loading />}>
       <section className="trainTimetableDetails">
         <table>
           <thead>

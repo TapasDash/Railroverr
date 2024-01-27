@@ -9,6 +9,7 @@ import TrainLoader from "@/utils/TrainLoader/TrainLoader";
 import TrainInfoCard from "@/components/TrainInfoCard";
 import { getTrainTimetableData } from "@/features/trainTimetable/trainTimetableSlice";
 import { Suspense } from "react";
+import Loading from "../loading";
 
 const TrainBetweenStationsDetails = () => {
   // const {
@@ -89,7 +90,7 @@ const TrainBetweenStationsDetails = () => {
 
   return cleanedUpTrainStationsData.map(
     ({ fromStation, toStation, trainName, trainNo, _id }) => (
-      <Suspense fallback={<TrainLoader />} key={_id}>
+      <Suspense fallback={<Loading />} key={_id}>
         <TrainInfoCard
           key={_id}
           fromStation={fromStation}

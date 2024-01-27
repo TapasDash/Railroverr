@@ -21,6 +21,7 @@ export const trainDetails = new Schema(
   { timestamps: true }
 );
 
-const TrainDetails = mongoose.model("trainDetails", trainDetails);
+const TrainDetails =
+  mongoose.models.trainDetails || mongoose.model("trainDetails", trainDetails);
 
 export default TrainDetails;

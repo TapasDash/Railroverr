@@ -3,7 +3,7 @@ import axios from "axios";
 // dotenv.config();
 
 const getTrainTimetableData = async (trainNo) => {
-  console.log({ trainNo }, import.meta.env);
+  console.log({ trainNo });
   const response = await axios.get(
     `${process.env.NEXT_PUBLIC_TRAIN_TIMETABLE_URL}/trainNo/${trainNo}`
   );

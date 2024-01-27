@@ -1,7 +1,7 @@
 "use client";
 import TrainLoader from "@/utils/TrainLoader/TrainLoader";
-const loading = () => {
+const Loading = () => {
   return <TrainLoader />;
 };
 
-export default loading;
+export default Loading;
