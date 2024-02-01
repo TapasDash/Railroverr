@@ -12,19 +12,6 @@ import { Suspense } from "react";
 import Loading from "../loading";
 
 const TrainBetweenStationsDetails = () => {
-  // const {
-  //   boardingInfo,
-  //   destinationInfo,
-  //   trainInfo: { dt, name, trainNo },
-  //   seatInfo: { coach, berth, noOfSeats },
-  // } = pnrData;
-  // const {
-  //   trainBetweenStationsData: {
-  //     boardingInfo,
-  //     destinationInfo,
-  //     trainInfo: { dt, name, trainNo },
-  //   },
-  // } = useSelector((state) => state.pnrStatus);
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -56,17 +43,6 @@ const TrainBetweenStationsDetails = () => {
         toStationCode,
         toStationName,
       } = trainData || {};
-
-      // const {
-      //   stationName,
-      //   stationCode,
-      //   toStationName,
-      //   destinationStation,
-      //   trainNo,
-      //   trainName,
-      //   arrivalTime,
-      //   departureTime,
-      // } = trainData || {};
 
       const fromStation = {
         code: fromStationCode,
