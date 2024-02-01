@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 12vh;// height property is working here only, nowhere else, I mean not in header.scss that you were doing before
+  height: 14vh;// height property is working here only, nowhere else, I mean not in header.scss that you were doing before
   // I have added this only in next js saass
   background: $grad;
   
@@ -47,6 +47,7 @@ a:hover {
 
 @media screen and (max-width: 780px) {
   .navbar {
+    height: 12vh;
     .navLinks {
       display: none;
     }
