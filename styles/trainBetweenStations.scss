@@ -6,6 +6,29 @@
   max-width: 800px;
   // background-color:rgb(55, 164, 207); //before giving color we have to give height and width first
 
+  .dropdown {
+    border: 1px solid $secondary;
+    border-radius: 7px;
+    padding: 0.35rem;
+    width: 70%;
+    outline: none; //these two are almost mandatory in button styles
+    border: none;
+    box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.66);
+    cursor: pointer;
+
+    .dropdown-row {
+      padding: 0.37rem 0 0.37rem 0;
+      &:hover {
+        // transform: scale(1.1);
+        background-color: $secondary;
+      }
+    }
+  }
+
+  div:empty {  // can be used to hide a DIV when it's empty.
+    display: none;
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -47,6 +70,12 @@
 @media screen and (min-width: 600px) {
   .trainBetweenStationsContainer {
     margin: 0 auto; //for centering a div
+
+    .dropdown {
+      border: 1px solid black;
+      border-radius: 7px;
+      padding: 0.3rem;
+  }
 
     input {
       width: 35%;

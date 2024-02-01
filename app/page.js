@@ -54,40 +54,42 @@ const TrainBetweenStations = () => {
           value={trainData.fromStation}
           onChange={handleChange}
         />
-        <div className="dropdown">
-          {trainData.fromStation &&
-            data
-              .filter((item) => {
-                const searchTerm = trainData.fromStation.toLowerCase();
-                const fullName = item.name.toLowerCase();
-                const { code } = item;
-                const regex = new RegExp(`${searchTerm}`, "gi");
+        {
+          <div className="dropdown">
+            {trainData.fromStation &&
+              data
+                .filter((item) => {
+                  const searchTerm = trainData.fromStation.toLowerCase();
+                  const fullName = item.name.toLowerCase();
+                  const { code } = item;
+                  const regex = new RegExp(`${searchTerm}`, "gi");
 
-                return (
-                  (searchTerm &&
-                    fullName.match(regex) &&
-                    fullName !== searchTerm) ||
-                  (code.match(regex) && code !== searchTerm)
-                );
-              })
-              .slice(0, 10)
-              .map((item) => (
-                <div
-                  onClick={() =>
-                    setTrainData((prevFormData) => {
-                      return {
-                        ...prevFormData,
-                        fromStation: `${item.name} - ${item.code}`,
-                      };
-                    })
-                  }
-                  className="dropdown-row"
-                  key={item.code}
-                >
-                  {item.name} - {item.code}
-                </div>
-              ))}
-        </div>
+                  return (
+                    (searchTerm &&
+                      fullName.match(regex) &&
+                      fullName !== searchTerm) ||
+                    (code.match(regex) && code !== searchTerm)
+                  );
+                })
+                .slice(0, 10)
+                .map((item) => (
+                  <div
+                    onClick={() =>
+                      setTrainData((prevFormData) => {
+                        return {
+                          ...prevFormData,
+                          fromStation: `${item.name} - ${item.code}`,
+                        };
+                      })
+                    }
+                    className="dropdown-row"
+                    key={item.code}
+                  >
+                    {item.name} - {item.code}
+                  </div>
+                ))}
+          </div>
+        }
         <h4>To Station:</h4>
         <input
           type="text"
