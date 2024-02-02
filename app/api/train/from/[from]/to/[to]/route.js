@@ -20,17 +20,21 @@ export async function GET(request, { params }) {
     });
     const data = await response.text();
     let json = Scraper.getTrainsBetweenStations(data);
-
+    console.log({ json });
     //this will be removed after I have enough data in the database
-    await Promise.all(
-      json.data.map(async (trainObj) => await saveTrainData(trainObj))
-    );
+    if (json.success) {
+      await Promise.all(
+        json.data.map(async (trainObj) => await saveTrainData(trainObj))
+      );
 
-    const trainSearchData = await TrainSearch.findOne({ from, to });
-    if (!trainSearchData)
-      await saveTrainSearchData({ from, to, data: json.data });
-    else json = trainSearchData;
+      const trainSearchData = await TrainSearch.findOne({ from, to });
+      console.log({ trainSearchData });
+      if (!trainSearchData)
+        await saveTrainSearchData({ from, to, data: json.data });
+      else json = { success: true, data: trainSearchData };
 
+      return NextResponse.json(json);
+    }
     return NextResponse.json(json);
   } catch (error) {
     console.log(error);

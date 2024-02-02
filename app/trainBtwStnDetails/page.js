@@ -10,6 +10,7 @@ import TrainInfoCard from "@/components/TrainInfoCard";
 import { getTrainTimetableData } from "@/features/trainTimetable/trainTimetableSlice";
 import { Suspense } from "react";
 import Loading from "../loading";
+import NotFoundLoader from "@/utils/NotFound/NotFoundLoader";
 
 const TrainBetweenStationsDetails = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,8 @@ const TrainBetweenStationsDetails = () => {
   );
   console.log({ trainBetweenStationsData });
   if (isLoading) return <TrainLoader />;
+  console.log({ isError });
+  if (!trainBetweenStationsData) return <NotFoundLoader />;
 
   const onClickTrainInfoCard = (trainNo) => {
     // let [trainNo] = trainInfo.split("-");
