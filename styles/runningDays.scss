@@ -1,0 +1,14 @@
+li {
+    display: inline;
+
+}
+  
+#highlighted {
+    font-weight: bold; /* Example styling for highlighted days */
+    color: black;
+  }
+  
+  #blurred {
+    // filter: blur(1.5rem); /* Example styling for blurred days */
+    color: lightgray;
+  }

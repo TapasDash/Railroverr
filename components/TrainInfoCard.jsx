@@ -2,11 +2,13 @@ import React from "react";
 import { MdDirectionsRailway } from "react-icons/md";
 
 import "../styles/trainInfoCard.scss";
+import RunningDays from "./RunningDays";
 
 const TrainInfoCard = ({
   fromStation,
   toStation,
   trainNo,
+  runningDays,
   trainName,
   onPress,
 }) => {
@@ -15,6 +17,7 @@ const TrainInfoCard = ({
     toStation,
     trainNo,
     trainName,
+    runningDays,
     onPress,
   });
   return (
@@ -28,6 +31,7 @@ const TrainInfoCard = ({
         <MdDirectionsRailway />
         <h3>{trainNo}</h3>
         <h4>{trainName}</h4>
+        <RunningDays runningDays={runningDays} />
       </section>
       <section className="stationSection">
         <h2>{toStation.code}</h2>

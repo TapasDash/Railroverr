@@ -46,6 +46,7 @@ const TrainBetweenStationsDetails = () => {
         toTime,
         toStationCode,
         toStationName,
+        runningDays,
       } = trainData || {};
 
       const fromStation = {
@@ -65,11 +66,12 @@ const TrainBetweenStationsDetails = () => {
         toStation,
         trainName,
         trainNo,
+        runningDays,
       });
     });
 
   return cleanedUpTrainStationsData.map(
-    ({ fromStation, toStation, trainName, trainNo, _id }) => (
+    ({ fromStation, toStation, trainName, trainNo, runningDays, _id }) => (
       <Suspense fallback={<Loading />} key={_id}>
         <TrainInfoCard
           key={_id}
@@ -77,6 +79,7 @@ const TrainBetweenStationsDetails = () => {
           toStation={toStation}
           trainName={trainName}
           trainNo={trainNo}
+          runningDays={runningDays}
           onPress={() => onClickTrainInfoCard(trainNo)}
         />
       </Suspense>
