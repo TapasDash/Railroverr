@@ -22,7 +22,8 @@ const TrainBetweenStationsDetails = () => {
   console.log({ trainBetweenStationsData });
   if (isLoading) return <TrainLoader />;
   console.log({ isError });
-  if (!trainBetweenStationsData.success) return <NotFoundLoader />;
+  if (trainBetweenStationsData === "No direct trains found")
+    return <NotFoundLoader />;
 
   const onClickTrainInfoCard = (trainNo) => {
     // let [trainNo] = trainInfo.split("-");
