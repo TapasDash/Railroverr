@@ -7,6 +7,7 @@ const RunningDays = ({ runningDays }) => {
       <ul>
         {daysOfWeek.map((day, index) => (
           <li
+            className="inlineDisplay"
             key={index}
             id={runningDays[index] === "1" ? "highlighted" : "blurred"}
           >
