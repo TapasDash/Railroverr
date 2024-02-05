@@ -11,7 +11,7 @@ class Scraper {
       if (noResponse[0] == "No direct trains found") {
         returnResponse["success"] = false;
         returnResponse["timestamp"] = Date.now();
-        returnResponse["data"] = noResponse[0];
+        returnResponse["trains"] = noResponse[0];
         return returnResponse;
       }
       if (
@@ -21,7 +21,7 @@ class Scraper {
       ) {
         returnResponse["success"] = false;
         returnResponse["timestamp"] = Date.now();
-        returnResponse["data"] = data[0].replaceAll("~", "");
+        returnResponse["trains"] = data[0].replaceAll("~", "");
         return returnResponse;
       }
       data = data.filter(Boolean);
@@ -52,7 +52,7 @@ class Scraper {
       }
       returnResponse["success"] = true;
       returnResponse["timestamp"] = Date.now();
-      returnResponse["data"] = arr;
+      returnResponse["trains"] = arr;
       return returnResponse;
     } catch (err) {
       console.warn(err.message);

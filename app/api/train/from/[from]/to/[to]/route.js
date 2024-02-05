@@ -24,14 +24,14 @@ export async function GET(request, { params }) {
     //this will be removed after I have enough data in the database
     if (json.success) {
       await Promise.all(
-        json.data.map(async (trainObj) => await saveTrainData(trainObj))
+        json.trains.map(async (trainObj) => await saveTrainData(trainObj))
       );
 
-      const trainSearchData = await TrainSearch.findOne({ from, to });
+      const trainSearchData = await TrainSearch.findOne({ from, to }).lean();
       console.log({ trainSearchData });
       if (!trainSearchData)
         await saveTrainSearchData({ from, to, data: json.data });
-      else json = { success: true, data: trainSearchData };
+      else json = { success: true, ...trainSearchData };
 
       return NextResponse.json(json);
     }

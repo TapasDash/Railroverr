@@ -8,8 +8,8 @@ const getTrainBetweenStations = async (fromStation, toStation) => {
     `${process.env.NEXT_PUBLIC_TRAIN_TIMETABLE_URL}/from/${fromStation}/to/${toStation}`
   ); // { stationCode: fromStation, destinationStation: toStation }
   console.log({ response });
-  console.log("---->", response?.data?.data);
-  return response?.data?.data?.trains;
+  console.log("---->", response.data);
+  return response?.data?.trains;
 };
 
 const trainBetweenStationsService = {
