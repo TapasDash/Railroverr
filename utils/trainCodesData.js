@@ -14885,6 +14885,10 @@ export const trainCodesData = {
       code: "PRG",
     },
     {
+      name: "Prayagraj JN",
+      code: "PRYJ",
+    },
+    {
       name: "Powerpet",
       code: "PRH",
     },
@@ -15179,6 +15183,10 @@ export const trainCodesData = {
     {
       name: "Pandiyapuram",
       code: "PYM",
+    },
+    {
+      name: "Pandit Deen Dayal Upadhyaya JN",
+      code: "DDU",
     },
     {
       name: "Payyoli",
