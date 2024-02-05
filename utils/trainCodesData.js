@@ -941,7 +941,7 @@ export const trainCodesData = {
       code: "GNT",
     },
     {
-      name: "Gunupur",
+      name: "GUNUPUR",
       code: "GNPR",
     },
     {
