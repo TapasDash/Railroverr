@@ -137,8 +137,12 @@ export const trainCodesData = {
       code: "AWB",
     },
     {
-      name: "AYODHYA",
+      name: "AYODHYA DHAM JN",
       code: "AY",
+    },
+    {
+      name: "AYODHYA CANTT",
+      code: "AYC",
     },
     {
       name: "AZAMGARH",
