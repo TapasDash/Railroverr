@@ -1650,7 +1650,7 @@ export const trainCodesData = {
     },
     {
       name: "MUMBAI CST",
-      code: "CSTM",
+      code: "CSMT",
     },
     {
       name: "MURI",
