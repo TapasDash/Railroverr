@@ -969,6 +969,10 @@ export const trainCodesData = {
       code: "HBJ",
     },
     {
+      name: "RANI KAMLAPATI",
+      code: "RKMP",
+    },
+    {
       name: "HAJIPUR",
       code: "HJP",
     },
