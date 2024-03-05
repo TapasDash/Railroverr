@@ -14,9 +14,7 @@ const TrainTimetable = () => {
   const dispatch = useDispatch();
 
   const fetchData = async () => {
-    return await axios.get(
-      `${process.env.NEXT_PUBLIC_TRAIN_TIMETABLE_URL}/dropdown`
-    );
+    return await axios.get(`${process.env.TRAIN_TIMETABLE_URL}/dropdown`);
   };
 
   useEffect(() => {
