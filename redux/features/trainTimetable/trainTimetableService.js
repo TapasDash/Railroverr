@@ -5,7 +5,9 @@ import axios from "axios";
 const getTrainTimetableData = async (trainNo) => {
   console.log({ trainNo }, import.meta.env);
   const response = await axios.get(
-    `${import.meta.env.VITE_REACT_TRAIN_TIMETABLE_URL}?trainNo=${trainNo}`
+    `${
+      import.meta.env.VITE_REACT_NEXT_PUBLIC_TRAIN_TIMETABLE_URL
+    }?trainNo=${trainNo}`
   );
   console.log({ response });
   console.log(response?.data?.data);

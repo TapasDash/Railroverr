@@ -27,7 +27,7 @@ const TrainBetweenStationsDetails = () => {
 
   const onClickTrainInfoCard = (trainNo) => {
     // let [trainNo] = trainInfo.split("-");
-    // console.log(import.meta.env.REACT_APP_TRAIN_TIMETABLE_URL);
+    // console.log(import.meta.env.REACT_APP_NEXT_PUBLIC_TRAIN_TIMETABLE_URL);
     dispatch(getTrainTimetableData(trainNo));
     router.push("/trainTimetableDetails");
   };
