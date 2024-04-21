@@ -4,10 +4,13 @@ import TrainTimetable from "@/models/TrainTimetable";
 import Scraper from "@/utils/Scraper";
 import { saveTrainData, saveTrainInfo } from "@/utils/saveTrain";
 import { NextResponse } from "next/server";
+import TrainInfo from "@/models/TrainInfo";
 
 export async function GET(request, { params }) {
   await connectDB();
   const { trainNo } = params;
+  const trainData = await TrainInfo.findOne({ trainNo });
+  if (trainData) return NextResponse.json(trainData);
 
   try {
     let response;
