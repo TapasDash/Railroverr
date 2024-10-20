@@ -138,6 +138,38 @@ class Scraper {
       console.warn(err.message);
     }
   }
+
+  static getLiveStation($) {
+    let arr = [];
+    let obj = {};
+    let retval = {};
+    $(".name").each((i, el) => {
+      obj["train_no"] = $(el).text().slice(0, 5);
+      obj["train_name"] = $(el).text().slice(5).trim();
+      obj["source_stn_name"] = $(el).next("div").text().split("→")[0].trim();
+      obj["dstn_stn_name"] = $(el).next("div").text().split("→")[1].trim();
+      obj["time_at"] = $(el).parent("td").next("td").text().slice(0, 5);
+      obj["detail"] = $(el).parent("td").next("td").text().slice(5);
+      // console.log($(el).text() + " : " + $(el).next("div").text() + " : " + $(el).parent("td").next("td").text().slice(0,5))
+      arr.push(obj);
+      obj = {};
+    });
+    retval["success"] = true;
+    retval["time_stamp"] = Date.now();
+    retval["data"] = arr;
+    return retval;
+  }
+
+  static getPnrStatus(string) {
+    let retval = {};
+    var pattern = /data\s*=\s*({.*?;)/;
+    let match = string.match(pattern)[0].slice(7, -1);
+    let data = JSON.parse(match);
+    retval["success"] = true;
+    retval["time_stamp"] = Date.now();
+    retval["data"] = data;
+    return retval;
+  }
 }
 
 export default Scraper;
