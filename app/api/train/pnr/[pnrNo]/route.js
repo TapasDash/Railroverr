@@ -13,7 +13,8 @@ export async function GET(request, { params }) {
   try {
     const response = await fetch(URL_Train);
     const data = await response.text();
-    console.log({ response, data });
+    console.log({ response });
+    console.log({ data });
     let json = Scraper.getPnrStatus(data);
     console.log({ json });
     return NextResponse.json(json);
