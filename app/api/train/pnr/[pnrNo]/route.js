@@ -19,6 +19,7 @@ export async function GET(request, { params }) {
     console.log({ json });
     return NextResponse.json(json);
   } catch (e) {
+    console.log({ e });
     return NextResponse.json({ success: false, message: e.message });
   }
 }
