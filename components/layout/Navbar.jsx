@@ -32,9 +32,9 @@ const Navbar = () => {
           <li>
             <Link href="/">Train Between Stations</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/trainTimeTable">Train Timetable</Link>
-          </li>
+          </li> */}
           <li>
             <Link href="/pnrStatus">PNR Status</Link>
           </li>
