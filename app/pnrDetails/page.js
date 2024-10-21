@@ -1,29 +1,13 @@
 "use client";
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { pnrData } from "./pnrData";
-import TrainInfoCard from "./TrainInfoCard";
+import React from "react";
+import { useSelector } from "react-redux";
 
-import "../styles/pnrDetails.scss";
-import { getPNRStatus, reset } from "../features/pnrStatus/pnrStatusSlice";
-import TrainLoader from "../utils/TrainLoader/TrainLoader";
+import "@/styles/pnrDetails.scss";
+
+import TrainLoader from "@/utils/TrainLoader/TrainLoader";
+import TrainInfoCard from "@/components/TrainInfoCard";
 
 const PnrDetails = () => {
-  // const {
-  //   boardingInfo,
-  //   destinationInfo,
-  //   trainInfo: { dt, name, trainNo },
-  //   seatInfo: { coach, berth, noOfSeats },
-  // } = pnrData;
-  // const {
-  //   pnrStatusData: {
-  //     boardingInfo,
-  //     destinationInfo,
-  //     trainInfo: { dt, name, trainNo },
-  //   },
-  // } = useSelector((state) => state.pnrStatus);
-
   const { pnrStatusData, isLoading, isError, message, isSuccess } = useSelector(
     (state) => state.pnrStatus
   );

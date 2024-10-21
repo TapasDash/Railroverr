@@ -2,10 +2,10 @@ import connectDB from "@/libs/connectDB";
 import Scraper from "@/utils/Scraper";
 import { NextResponse } from "next/server";
 
-export async function GET(request) {
+export async function GET(request, { params }) {
   await connectDB();
   console.log({ request });
-  const pnrNo = request.nextUrl.searchParams.get("pnr");
+  const { pnrNo } = params;
   console.log({ pnrNo });
   // const { trainNo } = req.query;
   let URL_Train = `https://www.confirmtkt.com/pnr-status/${pnrNo}`;

@@ -30,7 +30,7 @@ export async function GET(request, { params }) {
       const trainSearchData = await TrainSearch.findOne({ from, to }).lean();
       console.log({ trainSearchData });
       if (!trainSearchData)
-        await saveTrainSearchData({ from, to, data: json.data });
+        await saveTrainSearchData({ from, to, data: json.trains });
       else json = { success: true, ...trainSearchData };
 
       return NextResponse.json(json);

@@ -1,20 +1,21 @@
+"use client";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { getPNRStatus, reset } from "../features/pnrStatus/pnrStatusSlice";
-import "../styles/pnrStatus.scss";
+import { useDispatch } from "react-redux";
+import "@/styles/pnrStatus.scss";
+import { useRouter } from "next/navigation";
+import { getPNRStatus } from "@/features/pnrStatus/pnrStatusSlice";
 
 const PnrStatus = () => {
   const [pnrNumber, setPnrNumber] = useState("");
   // register authSlice
-
+  const router = useRouter();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const submitPnr = (e) => {
     e.preventDefault();
+    console.log({ pnrNumber });
     dispatch(getPNRStatus(pnrNumber));
-    navigate("/pnr-details");
+    router.push("/pnrDetails");
   };
 
   // useEffect(() => {

@@ -15,17 +15,6 @@ export async function GET(request, { params }) {
   try {
     let response;
     const userAgent = new UserAgent();
-    let URL_Train = `https://www.ixigo.com/action/content/?searchFor=getTrainSchedule&trainNumber=${trainNo}`;
-    response = await fetch(URL_Train, {
-      method: "GET",
-      headers: { "User-Agent": userAgent.toString() },
-    });
-
-    console.log({ response });
-    const x = await response.json();
-    console.log({ x });
-    const { schedules } = x;
-    console.log({ schedules });
 
     let URL_Train_1 = `https://erail.in/rail/getTrains.aspx?TrainNo=${trainNo}&DataSource=0&Language=0&Cache=true`;
     response = await fetch(URL_Train_1, {

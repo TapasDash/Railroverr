@@ -35,9 +35,9 @@ const Navbar = () => {
           <li>
             <Link href="/trainTimeTable">Train Timetable</Link>
           </li>
-          {/* <li>
-            <Link href="/pnr">PNR Status</Link>
-          </li> */}
+          <li>
+            <Link href="/pnrStatus">PNR Status</Link>
+          </li>
           {/* The reason PNR Status is commented because PNR is not working right
           now */}
         </ul>

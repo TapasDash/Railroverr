@@ -3,21 +3,13 @@ import axios from "axios";
 // dotenv.config();
 
 const getPNRStatus = async (pnrNumber) => {
-  console.log(import.meta.env);
-  const config = {
-    headers: {
-      "X-RapidAPI-Key": import.meta.env.VITE_REACT_RAPID_API_KEY,
-      "X-RapidAPI-Host": import.meta.env.VITE_REACT_RAPID_API_HOST,
-    },
-  };
-
+  console.log("getPnrStatus", { pnrNumber });
+  console.log("new env--->", process.env.NEXT_PUBLIC_TRAIN_TIMETABLE_URL);
   const response = await axios.get(
-    import.meta.env.VITE_REACT_PNR_API_URL + pnrNumber,
-    config
-  );
-  // console.log({ response });
-  // console.log(response.data.data);
-  return response.data.data;
+    `${process.env.NEXT_PUBLIC_TRAIN_TIMETABLE_URL}/pnr/${pnrNumber}`
+  ); // { stationCode: fromStation, destinationStation: toStation }
+  console.log("---->", response?.data);
+  return response?.data?.data;
 };
 
 const pnrService = {

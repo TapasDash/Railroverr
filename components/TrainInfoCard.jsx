@@ -10,6 +10,7 @@ const TrainInfoCard = ({
   trainNo,
   runningDays,
   trainName,
+  isPnr,
   onPress,
 }) => {
   console.log("In info card", {
@@ -18,6 +19,7 @@ const TrainInfoCard = ({
     trainNo,
     trainName,
     runningDays,
+    isPnr,
     onPress,
   });
   return (
@@ -31,7 +33,7 @@ const TrainInfoCard = ({
         <MdDirectionsRailway />
         <h3>{trainNo}</h3>
         <h4>{trainName}</h4>
-        <RunningDays runningDays={runningDays} />
+        {!isPnr && <RunningDays runningDays={runningDays} />}
       </section>
       <section className="stationSection">
         <h2>{toStation.code}</h2>
