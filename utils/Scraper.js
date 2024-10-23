@@ -163,8 +163,6 @@ class Scraper {
   static getPnrStatus(string) {
     let retval = {};
     var pattern = /data\s*=\s*({.*?;)/;
-    console.log({ pattern });
-    console.log("string.match(pattern))--------->", string.match(pattern));
     let match = string.match(pattern)[0].slice(7, -1);
     let data = JSON.parse(match);
     retval["success"] = true;

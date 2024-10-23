@@ -6,7 +6,7 @@ const getPNRStatus = async (pnrNumber) => {
   console.log("getPnrStatus", { pnrNumber });
   console.log("new env--->", process.env.NEXT_PUBLIC_TRAIN_TIMETABLE_URL);
   const response = await axios.get(
-    `${process.env.NEXT_PUBLIC_TRAIN_TIMETABLE_URL}/pnr/${pnrNumber}`
+    `${process.env.NEXT_PUBLIC_PNR_URL}/pnr/${pnrNumber}`
   ); // { stationCode: fromStation, destinationStation: toStation }
   console.log("----> respne", response);
   console.log("---->", response?.data);
